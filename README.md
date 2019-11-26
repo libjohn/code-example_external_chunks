@@ -25,16 +25,20 @@ sub-routine
 
 ## to child .R
 
-1.  Child document will not have R Markdown code chunks
-2.  Separate each sub-routine with a comment, followed by appropriate
-    code. For example:
+1.  Parent document must have at least one `kintr::read_chunk()`
+    function (see [code example](01_example.Rmd))
+
+> `knitr::read_chunk("src/example_starwars.R")`
+
+1.  Child document will separate each sub-routine with a comment,
+    followed by appropriate code. For example:
 
 <!-- end list -->
 
     # @kintr chunk_name
     plot(cars)
 
-3.  Parent code-chunk will reference child sub-routine via sub-routine
+1.  Parent code-chunk will reference child sub-routine via sub-routine
     name
 
 > `{r chunk_name}`
