@@ -102,6 +102,15 @@ documents including the HTML notebooks (html\_document | .html)
 
 ## Viz
 
+show code and output
+
+``` r
+swcharacters %>% 
+  ggplot(aes(fct_rev(fct_infreq(hair_color)))) +
+  geom_bar() +
+  coord_flip()
+```
+
 ![](01_example_files/figure-gfm/visualize_data-1.png)<!-- -->
 
 ## Tree Plot

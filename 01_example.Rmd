@@ -76,7 +76,9 @@ knitr::read_chunk('src/example_starwars.R')
 
 ## Viz
 
-```{r visualize_data}
+show code and output
+
+```{r visualize_data, echo=TRUE}
 ```
 
 ## Tree Plot
