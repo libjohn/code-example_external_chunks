@@ -15,12 +15,11 @@ swcharacters %>%
   geom_bar() +
   coord_flip()
 
-## @knitr plot_some_trees
-plot(trees)
-
 ## @knitr get_repub_prezes
-repub_prezes_vector <- ggplot2::presidential %>% 
+ggplot2::presidential %>% 
   filter(party == "Republican") %>% 
   mutate(repub_prezes = name) %>% 
   pull(repub_prezes)
-repub_prezes_vector
+
+# @knitr starwars_foo
+dplyr::starwars

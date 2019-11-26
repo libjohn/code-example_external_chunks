@@ -1,21 +1,69 @@
 Externalization - example 1
 ================
 
-Pull in external scripts into existing code chunks
+**Externalization**: import in child scripts into existing parent code
 
-from:
-<https://stackoverflow.com/questions/14796501/is-it-possible-to-call-external-r-script-from-r-markdown-rmd-in-rstudio>
+I think this is easiest to learn from existing examples.
+
+  - [Parent script](01.example.Rmd)
+  - [Child script 1](src/example_starwars.R)
+  - [Child script 2](src/example_trees.Rmd)
+  - [Output – GitHub Markdown Document](01_example.md)
+  - [Output – GitHub 01\_example.html](01_example.htmls)
+
+## Background
+
+While it is possible for a parent R Markdown document (.Rmd) to use
+externalized code chunks from child R Markdown documents (also .Rmd).
+The seemingly most logical approach is to have the child chuncks come
+from standar .R scripts.
+
+## Steps
+
+1.  Have a parent .Rmd script (01\_example.Rmd)
+
+2.  Have at least one child .R script (src/example\_starwars.R)
+
+3.  In the parent script, use the `knitr::read_chunk` function to import
+    code “chunks” from the child script.
+    
+      - each child “chunk” (subroutine) is delimited by a chunk name.
+        That name is used in the parent code chunk
+      - e.g. Child.R script contains label sub-routins: e.g. `## @knitr
+        chunk_name` where `chunk_name` varies according to the
+        sub-routine
 
 ## Load Libraries
 
-    ## -- Attaching packages ----------------------------------------------- tidyverse 1.2.1 --
+1.  A separate chunk, in the Parent, can now call a sub-routine within
+    the child script simply by using the child chunk “name” as the
+    parent code chunk name.
+    
+      - Again, the child chunk name is in the child script, a label
+        following the `@knitr` disgnation, following a `#` comment tag
+        in the first postion of the line.
+        
+          - e.g. `# @knitr load_libraries`
+    
+      - Meanwhile, the parent code-chunk name is the name of the child
+        code-chunk name
+        
+          - e.g. `{r load_libraries}`
+          - of course, this is a standard code chund so the above is
+            preceeded by three back ticks, and a following, closing,
+            line of three back ticks. Just the way any R Markdown
+            code-chunk appears.
+
+<!-- end list -->
+
+    ## -- Attaching packages ------------------------------------------------------------------------- tidyverse 1.2.1 --
 
     ## v ggplot2 3.2.1     v purrr   0.3.3
     ## v tibble  2.1.3     v dplyr   0.8.3
     ## v tidyr   1.0.0     v stringr 1.4.0
     ## v readr   1.3.1     v forcats 0.4.0
 
-    ## -- Conflicts -------------------------------------------------- tidyverse_conflicts() --
+    ## -- Conflicts ---------------------------------------------------------------------------- tidyverse_conflicts() --
     ## x dplyr::filter() masks stats::filter()
     ## x dplyr::lag()    masks stats::lag()
 
@@ -45,21 +93,78 @@ from:
 
 ## Tree Plot
 
+Now there is this one problem that an R Markdown document can only use a
+code-chunk name once in a document. But you can easily get around this
+problem by using different parent code-chunk names, along with the
+`child` argument in the code-chunk code header
+
+``` 
+- e.g.
+
+    - `{r trees1,  child='src/example_trees.Rmd'}`
+    - `{r trees2,  child='src/example_trees.Rmd'}`
+    
+```
+
+These two examples actually do the same thing. But since there are
+different code chunk names, they child code can be reused within the
+parent document. The catch that I see here is that the child-chunk now
+has to be a .Rmd file and can only have a single sub-routine
+(code-chunk) within it.
+
 Let’s use some base R: plot the on-board `trees` dataset
 
-![](01_example_files/figure-gfm/plot_some_trees-1.png)<!-- -->
+Trees example one
 
-## Imaginary Thanksgiving Conversation
+![](01_example_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+
+Trees example two
+
+![](01_example_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+
+## Summary
+
+There are at least two options. They work interchangebly
+
+Optioin 1:
+
+  - Store multiple sub-routines in a single .R script
+    
+      - each sub-routine name is a `#`comment, followed by `@kniter`,
+        followed by the chunk name
+      - In the parent file, there must be at least one parent code chunk
+        with the `kinter::read_chunk()` function
+      - This child chunk name becomes the chunk name for a code chunk in
+        the parent .Rmd file
+
+Option 2:
+
+  - Store each sub-routine as a separate .Rmd file
+    
+      - The child sub-routine must be written inside a standard .Rmd
+        code-chunk
+      - The sub-routine is called in the parent .Rmd with the `child=`
+        argument of the parent code-chunk header
+      - This sub-routine can be reused within the parent document
+
+## Fun Final Example
+
+### Imaginary Thanksgiving Conversation
+
+The next sub-routing is from the master child document
+example\_starwars.R. The purpose is to create a vector from a tabular
+dataset of presidential information.
 
     ## [1] "Eisenhower" "Nixon"      "Ford"       "Reagan"     "Bush"      
     ## [6] "Bush"
+
+Now I’ll use that vector with inline code, below….
 
 TH: Do you know the names of the Republican presidents?
 
 NP: No.
 
-TH: Well you’ve got: **Eisenhower, Nixon, Ford, Reagan, Bush, Bush**.
-That’s it.
+TH: Well you’ve got: **r `repub_prezes_vector`**. That’s it.
 
 NP: There are more. Right?
 
