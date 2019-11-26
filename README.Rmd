@@ -16,6 +16,8 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
+**Externalization**:  import child scripts into existing parent code
+
 How to reference a child document, within the parent .Rmd
 
 ## to a child .Rmd
@@ -52,3 +54,7 @@ plot(cars)
 - [Child script 2](src/example_trees.Rmd)
 - [Output -- GitHub Markdown Document](01_example.md)
 - [Output -- GitHub 01_example.html](01_example.html)
+
+## Caveats
+
+This doesn't seem to work so well with R Notebooks (html_notebook | .nb.html), but it seems to work fine with rendering other markdown documents including the HTML notebooks (html_document | .html)

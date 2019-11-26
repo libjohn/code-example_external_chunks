@@ -7,6 +7,8 @@
 
 <!-- badges: end -->
 
+**Externalization**: import child scripts into existing parent code
+
 How to reference a child document, within the parent .Rmd
 
 ## to a child .Rmd
@@ -46,3 +48,9 @@ sub-routine
   - [Child script 2](src/example_trees.Rmd)
   - [Output – GitHub Markdown Document](01_example.md)
   - [Output – GitHub 01\_example.html](01_example.html)
+
+## Caveats
+
+This doesn’t seem to work so well with R Notebooks (html\_notebook |
+.nb.html), but it seems to work fine with rendering other markdown
+documents including the HTML notebooks (html\_document | .html)

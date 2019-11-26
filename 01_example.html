@@ -366,7 +366,7 @@ summary {
 </div>
 
 
-<p><strong>Externalization</strong>: import in child scripts into existing parent code</p>
+<p><strong>Externalization</strong>: import child scripts into existing parent code</p>
 <p>I think this is <strong>easiest to learn from existing examples.</strong></p>
 <ul>
 <li><a href="01_example.Rmd">Parent script</a></li>
@@ -384,6 +384,10 @@ summary {
 <li>Ross. <a href="http://zevross.com/blog/2014/07/09/making-use-of-external-r-code-in-knitr-and-r-markdown/">Making use of external R code in knitr and R markdown</a></li>
 <li>@Opyate. <a href="https://stackoverflow.com/questions/14796501/is-it-possible-to-call-external-r-script-from-r-markdown-rmd-in-rstudio">Stack Overflow</a></li>
 </ul>
+</div>
+<div id="caveats" class="section level2">
+<h2>Caveats</h2>
+<p>This doesn’t seem to work so well with R Notebooks (html_notebook | .nb.html), but it seems to work fine with rendering other markdown documents including the HTML notebooks (html_document | .html)</p>
 </div>
 <div id="steps" class="section level2">
 <h2>Steps</h2>

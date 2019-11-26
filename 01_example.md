@@ -1,7 +1,7 @@
 Externalization - example 1
 ================
 
-**Externalization**: import in child scripts into existing parent code
+**Externalization**: import child scripts into existing parent code
 
 I think this is **easiest to learn from existing examples.**
 
@@ -23,6 +23,12 @@ See
     markdown](http://zevross.com/blog/2014/07/09/making-use-of-external-r-code-in-knitr-and-r-markdown/)
   - @Opyate. [Stack
     Overflow](https://stackoverflow.com/questions/14796501/is-it-possible-to-call-external-r-script-from-r-markdown-rmd-in-rstudio)
+
+## Caveats
+
+This doesn’t seem to work so well with R Notebooks (html\_notebook |
+.nb.html), but it seems to work fine with rendering other markdown
+documents including the HTML notebooks (html\_document | .html)
 
 ## Steps
 
