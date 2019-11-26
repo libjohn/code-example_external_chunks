@@ -1,0 +1,62 @@
+---
+title: "Externalization - example 1"
+output: github_document
+---
+
+Pull in external scripts into existing code chunks
+
+from:  https://stackoverflow.com/questions/14796501/is-it-possible-to-call-external-r-script-from-r-markdown-rmd-in-rstudio
+
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(echo = FALSE, cache=FALSE)
+knitr::read_chunk('src/example_starwars.R')
+```
+
+## Load Libraries
+
+```{r load_libraries}
+```
+
+
+## Load Data
+
+```{r load_data}
+```
+
+
+## Display Data
+
+```{r display_data}
+```
+
+## Viz
+
+```{r visualize_data}
+```
+
+## Tree Plot
+
+Let's use some base R:  plot the on-board `trees` dataset
+
+```{r plot_some_trees}
+```
+
+
+## Imaginary Thanksgiving Conversation
+
+```{r get_repub_prezes}
+```
+
+
+TH:  Do you know the names of the Republican presidents?
+
+NP:  No.
+
+TH:  Well you've got:  **`r repub_prezes_vector`**.  That's it.
+
+NP:  There are more.  Right?
+
+TH:  I don't wanna to talk any more.
+
+
