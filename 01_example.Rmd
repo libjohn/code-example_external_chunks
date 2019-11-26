@@ -143,10 +143,8 @@ TH:  Do you know the names of the Republican presidents?
 
 NP:  No.
 
-TH:  Well you've got:  **r `repub_prezes_vector`**.  That's it.
+TH:  Well you've got:  **`r repub_prezes_vector`**.  That's it.
 
 NP:  There are more.  Right?
 
 TH:  I don't wanna to talk any more.
-
-

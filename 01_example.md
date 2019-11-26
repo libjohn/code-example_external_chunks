@@ -69,14 +69,14 @@ documents including the HTML notebooks (html\_document | .html)
 
 <!-- end list -->
 
-    ## -- Attaching packages ------------------------------------------------------------------------- tidyverse 1.2.1 --
+    ## -- Attaching packages ------------------------------------------------------------------------ tidyverse 1.2.1 --
 
     ## v ggplot2 3.2.1     v purrr   0.3.3
     ## v tibble  2.1.3     v dplyr   0.8.3
     ## v tidyr   1.0.0     v stringr 1.4.0
     ## v readr   1.3.1     v forcats 0.4.0
 
-    ## -- Conflicts ---------------------------------------------------------------------------- tidyverse_conflicts() --
+    ## -- Conflicts --------------------------------------------------------------------------- tidyverse_conflicts() --
     ## x dplyr::filter() masks stats::filter()
     ## x dplyr::lag()    masks stats::lag()
 
@@ -177,7 +177,8 @@ TH: Do you know the names of the Republican presidents?
 
 NP: No.
 
-TH: Well you’ve got: **r `repub_prezes_vector`**. That’s it.
+TH: Well you’ve got: **Eisenhower, Nixon, Ford, Reagan, Bush, Bush**.
+That’s it.
 
 NP: There are more. Right?
 

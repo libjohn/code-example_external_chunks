@@ -16,10 +16,11 @@ swcharacters %>%
   coord_flip()
 
 ## @knitr get_repub_prezes
-ggplot2::presidential %>% 
+repub_prezes_vector <- ggplot2::presidential %>% 
   filter(party == "Republican") %>% 
   mutate(repub_prezes = name) %>% 
   pull(repub_prezes)
+repub_prezes_vector
 
 # @knitr starwars_foo
 dplyr::starwars
