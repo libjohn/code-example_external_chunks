@@ -3,7 +3,7 @@ Externalization - example 1
 
 **Externalization**: import in child scripts into existing parent code
 
-I think this is easiest to learn from existing examples.
+I think this is **easiest to learn from existing examples.**
 
   - [Parent script](01.example.Rmd)
   - [Child script 1](src/example_starwars.R)
@@ -11,18 +11,25 @@ I think this is easiest to learn from existing examples.
   - [Output – GitHub Markdown Document](01_example.md)
   - [Output – GitHub 01\_example.html](01_example.htmls)
 
-## Background
+**However**, if you dare there is more explanation/documentation is
+below….
 
-While it is possible for a parent R Markdown document (.Rmd) to use
-externalized code chunks from child R Markdown documents (also .Rmd).
-The seemingly most logical approach is to have the child chuncks come
-from standar .R scripts.
+## Citations
+
+See
+
+  - Xie. [Child Documents](https://yihui.org/knitr/demo/child/)
+  - Ross. [Making use of external R code in knitr and R
+    markdown](http://zevross.com/blog/2014/07/09/making-use-of-external-r-code-in-knitr-and-r-markdown/)
+  - @Opyate. [Stack
+    Overflow](https://stackoverflow.com/questions/14796501/is-it-possible-to-call-external-r-script-from-r-markdown-rmd-in-rstudio)
 
 ## Steps
 
 1.  Have a parent .Rmd script (01\_example.Rmd)
 
-2.  Have at least one child .R script (src/example\_starwars.R)
+2.  Have at least one child script (`src/example_starwars.R` |
+    `src/example_trees.Rmd`)
 
 3.  In the parent script, use the `knitr::read_chunk` function to import
     code “chunks” from the child script.
@@ -124,9 +131,9 @@ Trees example two
 
 ## Summary
 
-There are at least two options. They work interchangebly
+There are at least two options. They work interchangeably
 
-Optioin 1:
+Option 1:
 
   - Store multiple sub-routines in a single .R script
     
