@@ -41,8 +41,8 @@ sub-routine
 
 ## Code Examples
 
-  - [Parent script](01.example.Rmd)
+  - [Parent script](01_example.Rmd)
   - [Child script 1](src/example_starwars.R)
   - [Child script 2](src/example_trees.Rmd)
   - [Output – GitHub Markdown Document](01_example.md)
-  - [Output – GitHub 01\_example.html](01_example.htmls)
+  - [Output – GitHub 01\_example.html](01_example.html)
