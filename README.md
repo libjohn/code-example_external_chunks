@@ -38,3 +38,11 @@ sub-routine
 > `{r chunk_name}`
 
 **Advantage**: multiple sub-routines can be stored in a single .R file.
+
+## Code Examples
+
+  - [Parent script](01.example.Rmd)
+  - [Child script 1](src/example_starwars.R)
+  - [Child script 2](src/example_trees.Rmd)
+  - [Output – GitHub Markdown Document](01_example.md)
+  - [Output – GitHub 01\_example.html](01_example.htmls)
